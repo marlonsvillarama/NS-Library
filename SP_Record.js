@@ -288,6 +288,30 @@ define(
             };
         };
 
-        return {};
+        return {
+            Type: record.Type,
+            Record: Record,
+            submitFields: (options) => {
+                return record.submitFields(options);
+            },
+            create: (options) => {
+                return record.create(options);
+            },
+            load: (options) => {
+                return record.load(options);
+            },
+            copy: (options) => {
+                return record.copy(options);
+            },
+            transform: (options) => {
+                return record.transform(options);
+            },
+            delete: (options) => {
+                return record.delete(options);
+            },
+            cast: (record) => {
+                return new Record({ record: record });
+            }
+        };
     }
 )
